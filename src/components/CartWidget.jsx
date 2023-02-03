@@ -1,6 +1,16 @@
+import Badge from 'react-bootstrap/Badge';
+
 const CartWidget = () => {
     return(
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <div className="position-relative">
+            <span className="material-symbols-outlined Cart__Size">
+                shopping_cart
+            </span>
+            <Badge pill bg="danger" className="position-absolute top-50 start-50 ms-3 translate-middle">
+                0
+            </Badge>
+        </div>
+
     )
 }
 
