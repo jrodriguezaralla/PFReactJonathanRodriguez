@@ -8,7 +8,7 @@ const NavBar = () => {
         <>
             <Navbar bg="light">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/index.html">
                     <img
                         src="./src/assets/logo.svg"
                         width="80"
@@ -29,4 +29,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-rafc
