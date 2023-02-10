@@ -7,8 +7,9 @@ import '../index.css'
 
 const ItemCount = () => {
     const [contador, setContador] = useState(0)
-    const sumar = () => {
-        setContador(contador+1)
+    const stock = 4
+    function sumar() {
+        setContador(contador + 1);
     }
     const restar = () => {
         setContador(contador-1)
@@ -19,12 +20,12 @@ const ItemCount = () => {
             <ButtonGroup aria-label="Basic example">
                 <Button variant="dark" className="button__width text-center" onClick={()=>{
                     restar()
-                    if(contador<=0) setContador(0)
+                    if(contador <= 0) setContador(0)
                 }}>-</Button>
                 <div className="container-num">{contador}</div>
 
                 <Button variant="dark" className="button__width text-center" onClick={()=>{
-                    sumar()
+                    if(contador < stock && stock != 0) sumar()
                 }}>+</Button>
             </ButtonGroup>
             <Button variant="dark">Agregar al carrito</Button>
