@@ -6,20 +6,20 @@ const ItemList = ({productos}) => {
     return (
         <>
             <div>
-                {/*productos.map((prod)=>{
-                    <Item
-                        key={prod.id}
-                        id={prod.id}
-                        marca={prod.marca}  
-                        modelo={prod.modelo}
-                        imagen={prod.imagen}
-                        descripcion={prod.descripcion}
-                        cantidad={prod.cantidad}
-                        precio={prod.precio}
-                    />
-                })*/
-                }
+
             </div>
+            {productos.map((prod)=> (
+                <Item
+                    key={prod.id}
+                    id={prod.id}
+                    marca={prod.marca}  
+                    modelo={prod.modelo}
+                    imagen={prod.imagen}
+                    descripcion={prod.descripcion}
+                    cantidad={prod.cantidad}
+                    precio={prod.precio}
+                />
+            ))}
         </>
     )
 }
