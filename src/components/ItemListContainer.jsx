@@ -1,8 +1,12 @@
 import ItemCount from "./ItemCount"
+import ItemList from "./ItemList"
 
 const ItemListContainer = () => {
     return (
-        <ItemCount/>
+        <>
+            <ItemCount/>
+            <ItemList/>
+        </>
     )
 }
 
