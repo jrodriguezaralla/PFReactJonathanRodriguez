@@ -3,20 +3,17 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Item = () => {
+const Item = ({id, marca, modelo, imagen, descripcion, cantidad, precio}) => {
     return (
-        <div>
+        <div>{/*
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src="./{imagen}" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                    </Card.Text>
+                    <Card.Title>{marca} - {modelo}</Card.Title>
+                    <Card.Text>{descripcion} </Card.Text>
                     <Button variant="dark">Go somewhere</Button>
                 </Card.Body>
-            </Card>
+    </Card>*/}
         </div>
     )
 }
