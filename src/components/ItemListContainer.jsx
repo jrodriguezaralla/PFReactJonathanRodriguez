@@ -19,7 +19,6 @@ const ItemListContainer = () => {
     
     return (
         <>
-            <ItemCount/>
             <ItemList productos={productos}/>
         </>
     )

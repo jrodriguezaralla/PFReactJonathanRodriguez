@@ -2,17 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
+import '../index.css'
 
 const NavBar = () => {
     return(
         <>
             <Navbar bg="light">
-                <Container>
+                <Container className='navBar--height'>
                     <Navbar.Brand href="/index.html">
                     <img
                         src="./src/assets/logo.svg"
-                        width="80"
-                        height="80"
+                        width="120"
+                        height="120"
                         className="d-inline-block align-top"
                         alt="Enersys Baterias logo"
                     />
