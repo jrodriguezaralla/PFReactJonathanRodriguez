@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react"
+import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
     
@@ -17,7 +18,18 @@ const ItemDetailContainer = () => {
     }, []);
 
     return (
-        <div productos={productos}>ItemDetailContainer </div>
+        <> 
+            <div className='grid p-4'>
+                {productos.map((prod)=> (
+                    <ItemDetail
+                    key={prod.id}
+                    imagen={prod.imagen}
+                    descripcion={prod.descripcion}
+                    stock={prod.stock}
+                    precio={prod.precio}/>
+                ))}
+            </div>
+        </>
     )
 }
 
