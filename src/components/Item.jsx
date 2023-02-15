@@ -3,7 +3,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Item = ({id, marca, modelo, imagen, descripcion, cantidad, precio}) => {
+const Item = ({marca, modelo, imagen}) => {
     return (
         <> 
             <div>
