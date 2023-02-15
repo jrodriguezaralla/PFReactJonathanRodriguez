@@ -1,7 +1,6 @@
 import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
-import datos from "./datos.json"
 
 const ItemListContainer = () => {
     
