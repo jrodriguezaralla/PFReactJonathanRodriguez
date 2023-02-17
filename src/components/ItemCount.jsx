@@ -5,9 +5,8 @@ import Form from 'react-bootstrap/Form';
 import '../index.css'
 
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
     const [contador, setContador] = useState(0)
-    const stock = 4
     function sumar() {
         setContador(contador + 1);
     }
@@ -16,7 +15,7 @@ const ItemCount = () => {
     }
 
     return(
-        <div className="w-25 d-flex justify-content-between">
+        <div className="d-flex justify-content-between">
             <ButtonGroup aria-label="Basic example">
                 <Button variant="dark" className="button__width text-center" onClick={()=>{
                     restar()
@@ -28,7 +27,6 @@ const ItemCount = () => {
                     if(contador < stock && stock != 0) sumar()
                 }}>+</Button>
             </ButtonGroup>
-            <Button variant="dark">Agregar al carrito</Button>
         </div>
     )
 }
