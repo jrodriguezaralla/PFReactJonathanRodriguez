@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom'
 
 const ItemDetail = ({key, imagen, descripcion, stock, precio, modelo}) => {
     return (
