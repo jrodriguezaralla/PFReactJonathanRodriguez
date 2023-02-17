@@ -10,6 +10,15 @@
     },
     {
         "id" : "2",
+        "marca" : "YUASA",
+        "modelo" : "NP7.2-12",
+        "imagen" : "/baterias/NP7.2-12.jpg",
+        "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-7ah",
+        "stock" : 30,
+        "precio" : 38
+    },
+    {
+        "id" : "3",
         "marca" : "MICROCELL",
         "modelo" : "MC5-12",
         "imagen" : "/baterias//MC5-12.jpg",
@@ -18,10 +27,28 @@
         "precio" : 18.50
     },
     {
-        "id" : "3",
+        "id" : "4",
+        "marca" : "MICROCELL",
+        "modelo" : "MC7-12",
+        "imagen" : "/baterias//MC7-12.jpg",
+        "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-7ah",
+        "stock" : 250,
+        "precio" : 24.5
+    },
+    {
+        "id" : "5",
+        "marca" : "ENERSYS",
+        "modelo" : "SBS 100F",
+        "imagen" : "/baterias//SBS100F.jpg",
+        "descripcion" : "Bateria VRLA PLOMO PURO 12V-100ah",
+        "stock" : 15,
+        "precio" : 443
+    },
+    {
+        "id" : "6",
         "marca" : "ENERSYS",
         "modelo" : "SBS 190F",
-        "imagen" : "/baterias//SBS190F.jpg",
+        "imagen" : "/baterias//SBS100F.jpg",
         "descripcion" : "Bateria VRLA PLOMO PURO 12V-190ah",
         "stock" : 100,
         "precio" : 632
