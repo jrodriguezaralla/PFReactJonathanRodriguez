@@ -17,9 +17,9 @@ const Item = ({id, marca, modelo, imagen, stock}) => {
                         <Card.Subtitle className="mb-1 text-muted text-center">{marca}</Card.Subtitle>
                         <Card.Text className="mb1-0 text-center"> Stock: {stock} unidades </Card.Text>
                         <div className='d-flex justify-content-center'>
-                            <Link to={`/item/${id}`}>
-                                <Button variant="dark">Detalles</Button>
-                            </Link>
+                        <Link to={`/item/${id}`}>
+                            <Button variant="dark">Detalles</Button>
+                        </Link>
                         </div>
                     </Card.Body>
                 </Card>
