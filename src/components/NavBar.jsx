@@ -11,7 +11,7 @@ const NavBar = () => {
             <Navbar bg="light">
                 <Container className='navBar--height'>
                     <Link to="/">
-                        <Navbar.Brand href="/index.html">
+                        <Navbar.Brand>
                             <img
                             src="./src/assets/logo.svg"
                             width="120"
@@ -20,11 +20,17 @@ const NavBar = () => {
                             alt="Enersys Baterias logo"
                             />
                         </Navbar.Brand>
-                        </Link>
+                    </Link>
                     <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#">Yuasa</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Microcell</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Enersys</NavDropdown.Item>
+                        <Link to={`/category/${"YUASA"}`}>
+                            <NavDropdown.Item>YUASA</NavDropdown.Item>
+                        </Link>
+                        <Link to={`/category/${"MICROCELL"}`}>
+                            <NavDropdown.Item>MICROCELL</NavDropdown.Item>
+                        </Link>
+                        <Link to={`/category/${"ENERSYS"}`}>
+                            <NavDropdown.Item>ENERSYS</NavDropdown.Item>    
+                        </Link>
                     </NavDropdown>
                     <CartWidget/>
                 </Container>

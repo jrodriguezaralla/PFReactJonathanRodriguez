@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
     return (
         <> 
             <div className='w-25 h-25 p-4 d-flex justify-content-center'>
-                {productos.map((prod)=> (
+                {prodFilter.map((prod)=> (
                     <ItemDetail
                     key={prod.id}
                     imagen={prod.imagen}

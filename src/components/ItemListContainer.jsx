@@ -1,9 +1,11 @@
 import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
-    
+    const {category} = useParams()
+
     const consultarProductos = async () => {
         const respuesta = await fetch ("src/components/datos.json")
         const resultado = await respuesta.json()
@@ -16,9 +18,11 @@ const ItemListContainer = () => {
         consultarProductos().then((productos) => setProductos(productos))
     }, []);
     
+    const prodMarca = productos.filter ((prod) => prod.marca === category)
+
     return (
         <>
-            <ItemList productos={productos}/>
+            {category ? <ItemList productos={prodMarca}/> : <ItemList productos={productos}/>}
         </>
     )
 }

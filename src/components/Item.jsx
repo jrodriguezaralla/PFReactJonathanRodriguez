@@ -2,8 +2,9 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
-const Item = ({marca, modelo, imagen, stock}) => {
+const Item = ({id, marca, modelo, imagen, stock}) => {
     return (
         <> 
             <div>
@@ -16,7 +17,9 @@ const Item = ({marca, modelo, imagen, stock}) => {
                         <Card.Subtitle className="mb-1 text-muted text-center">{marca}</Card.Subtitle>
                         <Card.Text className="mb1-0 text-center"> Stock: {stock} unidades </Card.Text>
                         <div className='d-flex justify-content-center'>
-                            <Button variant="dark">Detalles</Button>
+                            <Link to={`/item/${id}`}>
+                                <Button variant="dark">Detalles</Button>
+                            </Link>
                         </div>
                     </Card.Body>
                 </Card>

@@ -8,10 +8,10 @@ const App = () => {
     return(
         <BrowserRouter>
             <NavBar/>
-
             <Routes>
                 <Route exact path="/" element={<ItemListContainer/>}/>
-                <Route exact path="/item" element={<ItemDetailContainer/>}/> 
+                <Route exact path="/category/:category" element={<ItemListContainer/>}/>
+                <Route exact path="/item/:id" element={<ItemDetailContainer/>}/> 
             </Routes>
         </BrowserRouter>
     )
