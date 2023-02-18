@@ -35,7 +35,7 @@
         "modelo" : "MC7-12",
         "imagen" : "/baterias//MC7-12.jpg",
         "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-7ah",
-        "stock" : 250,
+        "stock" : 0,
         "category" : "PLOMO-CALCIO",
         "precio" : 24.5
     },

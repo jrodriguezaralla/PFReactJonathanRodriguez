@@ -32,7 +32,7 @@ const NavBar = () => {
                         className="mt-2"
                     > 
                         <Dropdown.Item>
-                            <Link to={`/category/${"PLOMO-CALCIO"}`}  className="text-decoration-none text-white">
+                            <Link to={`/category/${"PLOMO-CALCIO"}`} className="text-decoration-none text-white">
                                 PLOMO-CALCIO
                             </Link>
                         </Dropdown.Item>
