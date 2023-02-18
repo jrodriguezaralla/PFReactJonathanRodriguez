@@ -21,7 +21,7 @@ const ItemDetail = ({imagen, descripcion, stock, precio, modelo}) => {
                     <ItemCount stock={stock}/>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <Button variant="dark">Agregar</Button>
+                    <Button variant="dark" disabled={ stock < 1 }>Agregar</Button>
                 </div>
             </Card.Body>
         </Card>
