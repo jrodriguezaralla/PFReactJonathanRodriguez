@@ -6,6 +6,7 @@
         "imagen" : "/baterias/NPX25.jpg",
         "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-5ah",
         "stock" : 100,
+        "category" : "PLOMO-CALCIO",
         "precio" : 30.50
     },
     {
@@ -15,6 +16,7 @@
         "imagen" : "/baterias/NP7.2-12.jpg",
         "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-7ah",
         "stock" : 30,
+        "category" : "PLOMO-CALCIO",
         "precio" : 38
     },
     {
@@ -24,6 +26,7 @@
         "imagen" : "/baterias//MC5-12.jpg",
         "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-5ah",
         "stock" : 100,
+        "category" : "PLOMO-CALCIO",
         "precio" : 18.50
     },
     {
@@ -33,6 +36,7 @@
         "imagen" : "/baterias//MC7-12.jpg",
         "descripcion" : "Bateria VRLA PLOMO-CALCIO 12V-7ah",
         "stock" : 250,
+        "category" : "PLOMO-CALCIO",
         "precio" : 24.5
     },
     {
@@ -42,6 +46,7 @@
         "imagen" : "/baterias//SBS100F.jpg",
         "descripcion" : "Bateria VRLA PLOMO PURO 12V-100ah",
         "stock" : 15,
+        "category" : "PLOMO-PURO",
         "precio" : 443
     },
     {
@@ -51,6 +56,7 @@
         "imagen" : "/baterias//SBS100F.jpg",
         "descripcion" : "Bateria VRLA PLOMO PURO 12V-190ah",
         "stock" : 100,
+        "category" : "PLOMO-PURO",
         "precio" : 632
     }
 ]

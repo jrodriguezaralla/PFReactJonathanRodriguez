@@ -18,11 +18,11 @@ const ItemListContainer = () => {
         consultarProductos().then((productos) => setProductos(productos))
     }, []);
     
-    const prodMarca = productos.filter ((prod) => prod.marca === category)
+    const prodFilter = productos.filter ((prod) => prod.category === category)
 
     return (
         <>
-            {category ? <ItemList productos={prodMarca}/> : <ItemList productos={productos}/>}
+            {category ? <ItemList productos={prodFilter}/> : <ItemList productos={productos}/>}
         </>
     )
 }

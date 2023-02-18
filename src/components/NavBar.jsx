@@ -1,4 +1,6 @@
 import Container from 'react-bootstrap/Container';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
@@ -21,18 +23,29 @@ const NavBar = () => {
                             />
                         </Navbar.Brand>
                     </Link>
-                    <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-                        <Link to={`/category/${"YUASA"}`}>
-                            <NavDropdown.Item>YUASA</NavDropdown.Item>
-                        </Link>
-                        <Link to={`/category/${"MICROCELL"}`}>
-                            <NavDropdown.Item>MICROCELL</NavDropdown.Item>
-                        </Link>
-                        <Link to={`/category/${"ENERSYS"}`}>
-                            <NavDropdown.Item>ENERSYS</NavDropdown.Item>    
-                        </Link>
-                    </NavDropdown>
-                    <CartWidget/>
+
+                    <DropdownButton
+                        id="dropdown-button-dark-example2"
+                        variant="secondary"
+                        menuVariant="dark"
+                        title="Categorias"
+                        className="mt-2"
+                    > 
+                        <Dropdown.Item>
+                            <Link to={`/category/${"PLOMO-CALCIO"}`}  className="text-decoration-none text-white">
+                                PLOMO-CALCIO
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <Link to={`/category/${"PLOMO-PURO"}`} className="text-decoration-none text-white">
+                                PLOMO PURO
+                            </Link>
+                        </Dropdown.Item>   
+                    </DropdownButton>
+
+                    <Link to={"/cart"} className="text-decoration-none text-dark">
+                        <CartWidget/>
+                    </Link>
                 </Container>
             </Navbar>
         </>
