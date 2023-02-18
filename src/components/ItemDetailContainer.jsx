@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     const consultarProductos = async () => {
-        const respuesta = await fetch ("/datos.json")
+        const respuesta = await fetch ("../datos.json")
         const resultado = await respuesta.json()
 
         return resultado
