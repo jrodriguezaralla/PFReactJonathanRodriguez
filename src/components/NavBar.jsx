@@ -31,12 +31,12 @@ const NavBar = () => {
                         title="Categorias"
                         className="mt-2"
                     > 
-                        <Dropdown.Item>
+                        <Dropdown.Item as='div'>
                             <Link to={`/category/${"PLOMO-CALCIO"}`} className="text-decoration-none text-white">
                                 PLOMO-CALCIO
                             </Link>
                         </Dropdown.Item>
-                        <Dropdown.Item>
+                        <Dropdown.Item as='div'>
                             <Link to={`/category/${"PLOMO-PURO"}`} className="text-decoration-none text-white">
                                 PLOMO PURO
                             </Link>
