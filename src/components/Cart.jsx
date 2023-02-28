@@ -15,7 +15,7 @@ const Cart = () => {
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label >Nombre:</Form.Label>
-                            <Form.Control type="Text" placeholder="Ingrese su nombre" className="mb-3" />
+                            <Form.Control type="Text" placeholder="Ingrese su nombre" className="mb-3" onKeyDown={noVocals}/>
                             <Form.Label>Apellido:</Form.Label>
                             <Form.Control type="Text" placeholder="Ingrese su apellido" className="mb-3" />
                             <Form.Label>Direccion de envio:</Form.Label>
