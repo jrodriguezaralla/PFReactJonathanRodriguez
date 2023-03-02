@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../index.css';
+import { CartContext } from '../context/ShoppingCartContext';
 
 const Cart = () => {
+    const {cart, setCart} = useContext(CartContext)
+    console.log(cart)
     return (
         <div className="d-flex justify-content-center">
             <div className="w-75">
@@ -15,7 +18,7 @@ const Cart = () => {
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label >Nombre:</Form.Label>
-                            <Form.Control type="Text" placeholder="Ingrese su nombre" className="mb-3" onKeyDown={noVocals}/>
+                            <Form.Control type="Text" placeholder="Ingrese su nombre" className="mb-3"/>
                             <Form.Label>Apellido:</Form.Label>
                             <Form.Control type="Text" placeholder="Ingrese su apellido" className="mb-3" />
                             <Form.Label>Direccion de envio:</Form.Label>
