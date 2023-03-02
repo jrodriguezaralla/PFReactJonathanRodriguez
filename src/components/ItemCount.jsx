@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
+import { CartContext } from "../context/ShoppingCartContext";
 import '../index.css'
 
 
 const ItemCount = ({stock}) => {
+    const {quantity} = useContext (CartContext)
+
     const [contador, setContador] = useState(0)
     function sumar() {
         setContador(contador + 1);
