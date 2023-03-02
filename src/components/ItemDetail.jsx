@@ -5,7 +5,6 @@ import ItemCount from './ItemCount';
 
 
 const ItemDetail = ({imagen, descripcion, stock, precio, modelo}) => {
-
     return (
     <div className='w-25 h-25'>
         <Card className='shadow'>
@@ -15,7 +14,7 @@ const ItemDetail = ({imagen, descripcion, stock, precio, modelo}) => {
             <Card.Img variant="top" src={imagen} className="p-2" />
             <Card.Body className='d-flex flex-column'>
                 <Card.Text>{descripcion}</Card.Text>
-                <Card.Text>Stock: {stock}</Card.Text>
+                <Card.Text>Stock: {stock} unidades</Card.Text>
                 <Card.Text className='fw-bold'>Precio: USD {precio}.-</Card.Text>
                 <div className='mb-2 d-flex justify-content-center'>
                     <ItemCount stock={stock}/>
