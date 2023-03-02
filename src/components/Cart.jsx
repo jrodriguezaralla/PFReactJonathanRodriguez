@@ -9,7 +9,7 @@ const Cart = () => {
     console.log(cart)
     return (
         <div className="d-flex justify-content-center">
-            <div className="w-75">
+            <div className="w-50">
                 <div className="mb-5">
                     Listado de productos
                 </div>

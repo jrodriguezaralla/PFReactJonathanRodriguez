@@ -14,21 +14,16 @@ const ItemDetailContainer = () => {
         return resultado
     }
 
-    const [productos, setProductos] = useState([])
+    const [productDetail, setProductDetail] = useState([])
     
     useEffect(() => {
-        consultarProductos().then((productos) => setProductos(productos.find ((prod) => prod.id == id)))
+        consultarProductos().then((productDetail) => setProductDetail(productDetail.find ((prod) => prod.id == id)))
     }, []);
 
     return (
         <> 
             <div className='d-flex justify-content-center p-5'>
-                    <ItemDetail
-                    imagen={productos.imagen}
-                    descripcion={productos.descripcion}
-                    stock={productos.stock}
-                    modelo={productos.modelo}
-                    precio={productos.precio}/>
+                    <ItemDetail producto={productDetail}/>
             </div>
         </>
     )
