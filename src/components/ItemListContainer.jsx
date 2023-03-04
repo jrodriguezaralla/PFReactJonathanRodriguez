@@ -1,10 +1,12 @@
 import ItemList from "./ItemList"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useParams } from 'react-router-dom'
+import { CartContext } from "../context/ShoppingCartContext"
 
 
 const ItemListContainer = () => {
     const {category} = useParams()
+    const {productos, setProductos} = useContext(CartContext)
 
     const consultarProductos = async () => {
         const respuesta = await fetch ("/datos.json")
@@ -12,7 +14,7 @@ const ItemListContainer = () => {
 
         return resultado
     }
-    const [productos, setProductos] = useState([])
+    
     
     useEffect(() => {
         consultarProductos().then((productos) => setProductos(productos))

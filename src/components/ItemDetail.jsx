@@ -6,7 +6,7 @@ import ItemCount from './ItemCount';
 
 
 const ItemDetail = ({producto}) => {
-    const {addItem} = useContext (CartContext)
+    const {addItem, quantity} = useContext (CartContext)
 
     return (
     <div className='w-25 h-25'>
@@ -23,7 +23,7 @@ const ItemDetail = ({producto}) => {
                     <ItemCount stock={producto.stock}/>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <Button variant="dark" disabled={producto.stock < 1 } onClick={() => addItem(producto)}>Agregar</Button>
+                    <Button variant="dark" disabled={producto.stock < 1 } onClick={() => addItem(producto, quantity)}>Agregar</Button>
                 </div>
             </Card.Body>
         </Card>
