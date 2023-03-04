@@ -26,7 +26,7 @@ const NavBar = () => {
 
                     <DropdownButton
                         id="dropdown-button-dark-example2"
-                        variant="secondary"
+                        variant="dark"
                         menuVariant="dark"
                         title="Categorias"
                         className="mt-2"

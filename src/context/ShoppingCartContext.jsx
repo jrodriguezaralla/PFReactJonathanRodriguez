@@ -11,23 +11,11 @@ const ShoppingCartContext = ({children}) => {
     const addItem = (newItem, cantidad) => {
         newItem.quantity = cantidad
         let newQuantity = newItem.stock-cantidad
-        console.log("a")
-        const updateProd = productos.map((prod) => {
-            
-            if(prod.id === newItem.id){
-                
-                return {
-                    ...prod, quantity: newQuantity
-                }
-            }
-                
-            
-            return prod
-
-        })
+        
+        const productoSeleccionado = productos.indexOf(productos.find( (elemento) => elemento.id === newItem.id ))
         
 
-        setProductos(updateProd)
+        setProductos([...productos, productos[productoSeleccionado].stock=newQuantity])
         setCart([...cart, newItem])
         setQuantity(1)
         
