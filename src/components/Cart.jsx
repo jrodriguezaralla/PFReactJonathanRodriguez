@@ -6,10 +6,9 @@ import '../index.css';
 import { CartContext } from '../context/ShoppingCartContext';
 
 const Cart = () => {
-    const {cart} = useContext(CartContext)
+    const {cart, removeItem} = useContext(CartContext)
     
     let auxiliar = cart.map((el) => el.precio*el.quantity) 
-    console.log(auxiliar)
     let total = auxiliar.reduce((acumulador, elemento) => acumulador + elemento,0)
 
     return (
@@ -20,10 +19,22 @@ const Cart = () => {
                         <div className='py-2'>
                             <Card border="light" className='shadow '>
                                 <Card.Header className='text-center'>
-                                    <Card.Title className='text-center m-0'>{prod.modelo}</Card.Title>
+                                    <div className='container'>
+                                        <div className='row'>
+                                            <Card.Title className='text-center m-0 col-11'>{prod.modelo} - {prod.marca}</Card.Title>
+
+                                            <Button variant="light col-1 d-flex justify-content-end" onClick={()=>{
+                                                    removeItem(prod.id)
+                                            }}>
+                                                <span className='material-symbols-outlined text-danger'>
+                                                    delete
+                                                </span>
+                                            </Button>
+                                            
+                                        </div> 
+                                    </div>
                                 </Card.Header>
                                 <Card.Body className='d-flex flex-column p-1'>
-                                    <Card.Subtitle className="mb-1 text-muted text-center">{prod.marca}</Card.Subtitle>
                                     <div className='d-flex justify-content-around'>
                                         <Card.Text className="text-center"> cantidad: {prod.quantity} unid.</Card.Text>
                                         <Card.Text className="text-center"> precio unitario: {prod.precio} USD </Card.Text>
