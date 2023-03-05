@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import '../index.css';
 import { CartContext } from '../context/ShoppingCartContext';
 import Cart from './Cart';
-import { Link } from 'react-router-dom';
 import CartEmpty from './CartEmpty';
+import CartTotal from './CartTotal';
 
 const CartContainer = () => {
     const {cart} = useContext(CartContext)
@@ -25,23 +23,11 @@ const CartContainer = () => {
                                 productoCarrito={prod}
                                 total = {total}
                             />
-                            ))
+                            )) 
                     }
                 </div>
-                
-                <Card className='my-2'>
-                        <Card.Body className="text-muted d-flex justify-content-around">
-                            
-                            <Button disabled={cart.length == 0} variant="dark">
-                                <Link to={"/formulario"} className="text-decoration-none text-white">
-                                    Continuar con la compra
-                                </Link>
-                            </Button>
-                            
-                            <Card.Title className='fs-3 m-0 fw-bold text-dark'>Total: {total} USD</Card.Title>
-                        </Card.Body>
-                </Card>
-                
+
+                {cart.length != 0 && <CartTotal total={total}/>}
             </div>
 
         </div>
