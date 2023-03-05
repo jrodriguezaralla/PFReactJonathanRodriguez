@@ -1,5 +1,5 @@
 import ItemList from "./ItemList"
-import { useState, useEffect, useContext } from "react"
+import { useEffect, useContext } from "react"
 import { useParams } from 'react-router-dom'
 import { CartContext } from "../context/ShoppingCartContext"
 
