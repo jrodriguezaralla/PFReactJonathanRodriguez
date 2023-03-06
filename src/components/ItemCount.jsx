@@ -7,13 +7,13 @@ import '../index.css'
 
 
 const ItemCount = ({stock}) => {
-    const {quantity, setQuantity} = useContext (CartContext)
+    const {count, setCount} = useContext (CartContext)
 
     function sumar() {
-        setQuantity(quantity + 1);
+        setCount(count + 1);
     }
     const restar = () => {
-        setQuantity(quantity-1)
+        setCount(count-1)
     }
 
     return(
@@ -21,12 +21,12 @@ const ItemCount = ({stock}) => {
             <ButtonGroup aria-label="Basic example">
                 <Button variant="dark" className="button__width text-center" onClick={()=>{
                     restar()
-                    if(quantity <= 0) setContador(1)
+                    if(count <= 0) setContador(1)
                 }}>-</Button>
-                <div className="container-num">{quantity}</div>
+                <div className="container-num">{count}</div>
 
                 <Button variant="dark" className="button__width text-center" onClick={()=>{
-                    if(quantity < stock && stock != 0) sumar()
+                    if(count < stock && stock != 0) sumar()
                 }}>+</Button>
             </ButtonGroup>
         </div>
