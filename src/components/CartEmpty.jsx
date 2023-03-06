@@ -1,13 +1,38 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
 
 const CartEmpty = () => {
+    const [show, setShow] = useState(true);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <div className='text-center fw-bold my-4 fs-2'>
-            <Card>
-                <Card.Header>¡AGREGUE PRODUCTOS AL CARRITO!</Card.Header>
-            </Card>
-        </div>
+        <>
+
+    
+            <Modal
+            show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}
+            centered
+            >
+            <Modal.Header>
+                <Modal.Title>¡ATENCIÓN!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                Debe agregar productos al carrito
+            </Modal.Body>
+            <Modal.Footer>
+            <Link to="/">
+                <Button variant="dark">Agregar productos</Button>
+            </Link>
+            </Modal.Footer>
+            </Modal>
+        </>
     )
 }
 
