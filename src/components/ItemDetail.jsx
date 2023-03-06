@@ -1,12 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { CartContext } from '../context/ShoppingCartContext';
+import Modal from 'react-bootstrap/Modal';
+
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({producto}) => {
     const {addItem, count} = useContext (CartContext)
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
     <div className='w-25 h-25'>
@@ -23,7 +31,30 @@ const ItemDetail = ({producto}) => {
                     <ItemCount stock={producto.stock}/>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <Button variant="dark" disabled={producto.stock < 1 } onClick={() => addItem(producto, count)}>Agregar</Button>
+                    <Button variant="dark" disabled={producto.stock < 1 } onClick={() => {
+                        addItem(producto, count)
+                        handleShow()
+                    }}>
+                        
+                        Agregar
+
+                    </Button>
+
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>¡Producto Agregado al carrito!</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Footer>
+                        <Button variant="dark" onClick={handleClose}>
+                            Seguir agregando
+                        </Button>
+                        <Link to={"/"} >
+                            <Button variant="dark" onClick={handleClose}>
+                                Agregar nuevo producto
+                            </Button>
+                        </Link>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
             </Card.Body>
         </Card>
