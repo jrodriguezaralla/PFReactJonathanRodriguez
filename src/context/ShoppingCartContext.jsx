@@ -9,16 +9,27 @@ const ShoppingCartContext = ({children}) => {
     const [productos, setProductos] = useState([])
 
     const addItem = (newItem, cantidad) => {
-        if(isInCart(newItem.id)){
-            
-        }
-
-        newItem.quantity = cantidad
-
-        setCart([...cart, newItem])
-        setQuantity(1)
+        let estaEnCarrito = isInCart(newItem.id)
         
+        if(estaEnCarrito){
+            const newQuantity = estaEnCarrito.quantity + cantidad
+            const newCart = cart.map ((prod)=>{
+                return {
+                    ...prod,
+                    quantity: newQuantity
+                }
+            })
+            setCart(newCart)
+            setQuantity(1)
+            
+        } else{       
+            newItem.quantity = cantidad
+
+            setCart([...cart, newItem])
+            setQuantity(1)
+        }    
     }
+
     const removeItem = (itemId) => {
         const newCart = cart.filter((elemento) => elemento.id !== itemId)
         setCart(newCart)
