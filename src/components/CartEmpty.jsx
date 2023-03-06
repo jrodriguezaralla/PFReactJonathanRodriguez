@@ -11,8 +11,6 @@ const CartEmpty = () => {
 
     return (
         <>
-
-    
             <Modal
             show={show}
             onHide={handleClose}
@@ -20,17 +18,17 @@ const CartEmpty = () => {
             keyboard={false}
             centered
             >
-            <Modal.Header>
-                <Modal.Title>¡ATENCIÓN!</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                Debe agregar productos al carrito
-            </Modal.Body>
-            <Modal.Footer>
-            <Link to="/">
-                <Button variant="dark">Agregar productos</Button>
-            </Link>
-            </Modal.Footer>
+                <Modal.Header>
+                    <Modal.Title>¡ATENCIÓN!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Debe agregar productos al carrito
+                </Modal.Body>
+                <Modal.Footer>
+                    <Link to="/">
+                        <Button variant="dark">Agregar productos</Button>
+                    </Link>
+                </Modal.Footer>
             </Modal>
         </>
     )

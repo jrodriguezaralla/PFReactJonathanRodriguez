@@ -21,7 +21,6 @@ const CartContainer = () => {
                             <Cart
                                 key = {prod.id} 
                                 productoCarrito={prod}
-                                total = {total}
                             />
                             )) 
                     }

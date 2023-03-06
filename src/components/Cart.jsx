@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { CartContext } from '../context/ShoppingCartContext';
 import '../index.css';
 
-const Cart = ({productoCarrito, total}) => {
+const Cart = ({productoCarrito}) => {
     const {removeItem} = useContext(CartContext)
     return (
         <>
@@ -13,15 +13,19 @@ const Cart = ({productoCarrito, total}) => {
                     <Card.Header className='text-center'>
                         <div className='container'>
                             <div className='row'>
-                                <Card.Title className='text-center m-0 col-11'>{productoCarrito.modelo} - {productoCarrito.marca}</Card.Title>
+                                <div className='col-11'>
+                                    <Card.Title className='text-center m-0'>{productoCarrito.modelo} - {productoCarrito.marca}</Card.Title>
+                                </div>
 
-                                <Button variant="light col-1 d-flex justify-content-end" onClick={()=>{
-                                        removeItem(productoCarrito.id)
-                                }}>
-                                    <span className='material-symbols-outlined text-danger'>
-                                        delete
-                                    </span>
-                                </Button>
+                                <div className='col-1 d-flex justify-content-end' >
+                                    <Button variant="light" className='d-flex justify-content-center' style={{ width: '2rem' }} onClick={()=>{
+                                            removeItem(productoCarrito.id)
+                                    }}>
+                                        <span className='material-symbols-outlined text-danger'>
+                                            delete
+                                        </span>
+                                    </Button>
+                                </div>
                                 
                             </div> 
                         </div>

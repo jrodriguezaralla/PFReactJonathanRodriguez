@@ -9,19 +9,18 @@ const ShoppingCartContext = ({children}) => {
     const [productos, setProductos] = useState([])
 
     const addItem = (newItem, cantidad) => {
-        newItem.quantity = cantidad
-        let newQuantity = newItem.stock-cantidad
-        
-        const productoSeleccionado = productos.indexOf(productos.find( (elemento) => elemento.id === newItem.id ))
-        
+        if(isInCart(newItem.id)){
+            
+        }
 
-        setProductos([...productos, productos[productoSeleccionado].stock=newQuantity])
+        newItem.quantity = cantidad
+
         setCart([...cart, newItem])
         setQuantity(1)
         
     }
     const removeItem = (itemId) => {
-        const newCart = cart.filter((cart) => cart.id !== itemId)
+        const newCart = cart.filter((elemento) => elemento.id !== itemId)
         setCart(newCart)
     }
 
