@@ -7,7 +7,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
     const {category} = useParams()
-    const {productos, setProductos} = useContext(CartContext)
+    const {productos, setProductos, setLoading} = useContext(CartContext)
     
     useEffect(() => {
         const db = getFirestore();
@@ -19,15 +19,18 @@ const ItemListContainer = () => {
                 
             }));
             setProductos(productos);
-        });
-    }, []);
-    
+            
+        })
+        setLoading(false)
+        
+    }, [])
+    setLoading(true)
     const prodFilter = productos.filter ((prod) => prod.category === category)
 
     return (
-        <>
+        <div className="w-100 h-100">
             {category ? <ItemList productos={prodFilter}/> : <ItemList productos={productos}/>}
-        </>
+        </div>
     )
 }
 

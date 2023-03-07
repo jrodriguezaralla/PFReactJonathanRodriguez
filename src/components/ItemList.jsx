@@ -1,9 +1,18 @@
 //renderiza diferentes todas las cards con los producto
-import React from 'react'
+import React, { useContext } from 'react'
 import Item from './Item'
 import '../index.css'
 
+import { CartContext } from '../context/ShoppingCartContext'
+import Loader from './Loader'
+
 const ItemList = ({productos}) => {
+    const {loading} = useContext(CartContext)
+    
+    if(loading){
+        return <Loader/>
+    }
+
     return (
         <>
             <div className='grid p-4'>

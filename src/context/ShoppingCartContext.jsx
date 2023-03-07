@@ -6,6 +6,7 @@ const ShoppingCartContext = ({children}) => {
     //let carrito = JSON.parse(localStorage.getItem('carrito')) || [] // si tengo guardado un carrito en Local Storage lo asigno a carrito, sino le asigno un array vacio
     const [cart, setCart] = useState([])
     //setCart(JSON.parse(localStorage.getItem('cart')) || [])
+    const [loading, setLoading] = useState(true)
     
     const [count, setCount] = useState (1)
     const [productos, setProductos] = useState([])
@@ -47,7 +48,7 @@ const ShoppingCartContext = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value = {{cart, setCart, addItem, removeItem, clearCart, isInCart, count, setCount, productos, setProductos}}>
+        <CartContext.Provider value = {{cart, setCart, addItem, removeItem, clearCart, isInCart, count, setCount, productos, setProductos, loading, setLoading}}>
             {children}
         </CartContext.Provider>
     )
