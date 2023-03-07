@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { CartContext } from '../context/ShoppingCartContext';
 import Modal from 'react-bootstrap/Modal';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
@@ -30,15 +32,18 @@ const ItemDetail = ({producto}) => {
                 <div className='mb-2 d-flex justify-content-center'>
                     <ItemCount stock={producto.stock}/>
                 </div>
-                <div className='d-flex justify-content-center'>
-                    <Button variant="dark" disabled={producto.stock < 1 } onClick={() => {
-                        addItem(producto, count)
-                        handleShow()
-                    }}>
-                        
-                        Agregar
 
-                    </Button>
+                <div className='d-flex justify-content-center'>
+                    <OverlayTrigger overlay={<Tooltip id="tooltip-disabled" hidden={producto.stock > 1 }>Lo sentimos, no disponemos de stock por el momento</Tooltip>}>
+                    <span className="d-inline-block">
+                        <Button variant="dark" disabled={producto.stock < 1 } style={{ pointerEvents: 'none' }} onClick={() => {
+                            addItem(producto, count)
+                            handleShow()
+                        }}>
+                            Agregar al carrito
+                        </Button>
+                    </span>
+                    </OverlayTrigger>
 
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
