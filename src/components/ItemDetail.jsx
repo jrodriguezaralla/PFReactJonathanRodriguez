@@ -36,7 +36,7 @@ const ItemDetail = ({producto}) => {
                 <div className='d-flex justify-content-center'>
                     <OverlayTrigger overlay={<Tooltip id="tooltip-disabled" hidden={producto.stock > 1 }>Lo sentimos, no disponemos de stock por el momento</Tooltip>}>
                     <span className="d-inline-block">
-                        <Button variant="dark" disabled={producto.stock < 1 } style={{ pointerEvents: 'none' }} onClick={() => {
+                        <Button variant="dark" disabled={producto.stock < 1 } onClick={() => {
                             addItem(producto, count)
                             handleShow()
                         }}>

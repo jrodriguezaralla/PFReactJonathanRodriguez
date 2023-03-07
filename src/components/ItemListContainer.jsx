@@ -7,7 +7,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
     const {category} = useParams()
-    const {productos, setProductos, setLoading} = useContext(CartContext)
+    const {productos, setProductos, setLoading, setCount} = useContext(CartContext)
     
     useEffect(() => {
         const db = getFirestore();
@@ -19,7 +19,7 @@ const ItemListContainer = () => {
                 
             }));
             setProductos(productos);
-            
+            setCount(1);
         })
         setLoading(false)
         
