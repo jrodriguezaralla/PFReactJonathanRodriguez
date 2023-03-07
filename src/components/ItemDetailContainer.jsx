@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import '../index.css'
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
 
     return (
         <> 
-            <div className='d-flex justify-content-center p-5'>
+            <div className='d-flex justify-content-center p-5 import fade-in'>
                     <ItemDetail producto={productDetail}/>
             </div>
         </>

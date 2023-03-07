@@ -9,13 +9,13 @@ import Loader from './Loader'
 const ItemList = ({productos}) => {
     const {loading} = useContext(CartContext)
     
-    if(loading){
+   /* if(loading){
         return <Loader/>
-    }
+    }*/
 
     return (
         <>
-            <div className='grid p-4'>
+            <div className='grid p-4 fade-in'>
                 {productos.map((prod)=> (
                     <Item
                         key={prod.id}

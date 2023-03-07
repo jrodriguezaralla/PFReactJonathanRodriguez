@@ -3,12 +3,13 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import '../index.css'
 
 const Item = ({id, marca, modelo, imagen, stock}) => {
     return (
         <> 
             <div>
-                <Card border="light" className='shadow '>
+                <Card border="light" className='shadow'>
                     <Card.Header className='text-center'>
                         <Card.Title className='text-center m-0'>{modelo}</Card.Title>
                     </Card.Header>
