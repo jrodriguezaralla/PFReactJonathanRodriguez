@@ -50,9 +50,11 @@ const ItemDetail = ({producto}) => {
                             <Modal.Title>¡Producto Agregado al carrito!</Modal.Title>
                         </Modal.Header>
                         <Modal.Footer>
-                        <Button variant="dark" onClick={handleClose}>
-                            Seguir agregando
-                        </Button>
+                        <Link to={"/cart"} >
+                            <Button variant="dark" onClick={handleClose}>
+                                Ir al carrito
+                            </Button>
+                        </Link>
                         <Link to={"/"} >
                             <Button variant="dark" onClick={handleClose}>
                                 Agregar nuevo producto
