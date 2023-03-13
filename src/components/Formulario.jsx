@@ -9,11 +9,15 @@ const Formulario = () => {
     const {cart} = useContext (CartContext)
     const [orderId, setOrderId] = useState (null)
     const [name, setName] = useState("")
+    const [lastName, setLastName] = useState("")
     const [email,setEmail] = useState("")
+    const [adress, setAdress] = useState("")
 
     const order = {
         name,
+        lastName,
         email,
+        adress,
         cart
     }
     console.log(name)
@@ -34,13 +38,11 @@ const Formulario = () => {
                         <Form.Label >Nombre:</Form.Label>
                         <Form.Control type="Text" placeholder="Ingrese su nombre" className="mb-3" required onChange={(e) => setName(e.target.value)}/>
                         <Form.Label>Apellido:</Form.Label>
-                        <Form.Control type="Text" placeholder="Ingrese su apellido" className="mb-3" required/>
+                        <Form.Control type="Text" placeholder="Ingrese su apellido" className="mb-3" required onChange={(e) => setLastName(e.target.value)}/>
                         <Form.Label>Email:</Form.Label>
                         <Form.Control type="email" placeholder="name@example.com" className="mb-3" required onChange={(e) => setEmail(e.target.value)}/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Dejenos un mensaje:</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
+                        <Form.Label>Direccion:</Form.Label>
+                        <Form.Control type="text" placeholder="Ingrese su direccion" className="mb-3" required onChange={(e) => setAdress(e.target.value)}/>
                     </Form.Group>
                     <Button variant="dark" type="submit">
                         Finalizar compra
