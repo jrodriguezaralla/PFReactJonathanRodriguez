@@ -4,6 +4,7 @@ import { CartContext } from '../context/ShoppingCartContext';
 import Cart from './Cart';
 import CartEmpty from './CartEmpty';
 import CartTotal from './CartTotal';
+import Formulario from './Formulario';
 
 const CartContainer = () => {
     const {cart} = useContext(CartContext)
@@ -14,7 +15,7 @@ const CartContainer = () => {
     return (
         <div className="d-flex justify-content-center">
             <div className="w-50">
-                <div className="mb-5">
+                <div className="mb-3">
                     {cart.length === 0 
                         ? <CartEmpty/>
                         : cart.map((prod)=> (
@@ -27,6 +28,7 @@ const CartContainer = () => {
                 </div>
 
                 {cart.length != 0 && <CartTotal total={total}/>}
+                {cart.length != 0 && <Formulario/>}
             </div>
 
         </div>

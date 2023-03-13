@@ -26,8 +26,8 @@ const Formulario = () => {
     }
 
     return (
-        <div className='d-flex flex-row justify-content-center my-5 fade-in'>
-            <div border="light" className="form--container w-50"> 
+        <div className='d-flex flex-row justify-content-center my-4 fade-in '>
+            <div border="light" className="form--container w-100"> 
                 <h1 className='fs-3 m-0 fw-bold text-dark text-center'>INGRESE SUS DATOS DE CONTACTO</h1>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
