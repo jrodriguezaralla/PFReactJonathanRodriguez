@@ -6,13 +6,15 @@ import Modal from 'react-bootstrap/Modal';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
+import { doc, getDoc, getFirestore, updateDoc} from "firebase/firestore";
+
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({producto}) => {
-    const {addItem, count} = useContext (CartContext)
-
+    const {addItem, count, updateProduct} = useContext (CartContext)
+    
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -39,14 +41,15 @@ const ItemDetail = ({producto}) => {
                         <Button variant="dark" disabled={producto.stock < 1 } onClick={() => {
                             addItem(producto, count)
                             handleShow()
+                            updateProduct (producto.id, producto.stock - count)
                         }}>
                             Agregar al carrito
                         </Button>
                     </span>
                     </OverlayTrigger>
 
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
+                    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+                        <Modal.Header>
                             <Modal.Title>¡Producto Agregado al carrito!</Modal.Title>
                         </Modal.Header>
                         <Modal.Footer>

@@ -5,7 +5,7 @@ import { CartContext } from '../context/ShoppingCartContext';
 import '../index.css';
 
 const Cart = ({productoCarrito}) => {
-    const {removeItem} = useContext(CartContext)
+    const {removeItem, updateProduct, count} = useContext(CartContext)
     return (
         <>
             <div className='py-2'>
@@ -20,6 +20,7 @@ const Cart = ({productoCarrito}) => {
                                 <div className='col-1 d-flex justify-content-end' >
                                     <Button variant="light" className='d-flex justify-content-center' style={{ width: '2rem' }} onClick={()=>{
                                             removeItem(productoCarrito.id)
+                                            updateProduct (productoCarrito.id, productoCarrito.stock)
                                     }}>
                                         <span className='material-symbols-outlined text-danger'>
                                             delete

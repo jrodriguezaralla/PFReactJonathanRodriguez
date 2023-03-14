@@ -1,15 +1,21 @@
 import { createContext, useState } from "react";
+import { updateDoc, doc, getFirestore} from "firebase/firestore"
 
 export const CartContext = createContext(null)
 
 const ShoppingCartContext = ({children}) => {
-    //let carrito = JSON.parse(localStorage.getItem('carrito')) || [] // si tengo guardado un carrito en Local Storage lo asigno a carrito, sino le asigno un array vacio
+    
     const [cart, setCart] = useState([])
-    //setCart(JSON.parse(localStorage.getItem('cart')) || [])
     const [loading, setLoading] = useState(true)
     
     const [count, setCount] = useState (1)
     const [productos, setProductos] = useState([])
+
+    const updateProduct = (id, newStock) => {
+        const db = getFirestore()
+        const productDoc = doc(db,"baterias",id)
+        updateDoc(productDoc, {stock: newStock})
+    }
 
     const addItem = (newItem, cantidad) => {
         let estaEnCarrito = isInCart(newItem.id)
@@ -48,7 +54,7 @@ const ShoppingCartContext = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value = {{cart, setCart, addItem, removeItem, clearCart, isInCart, count, setCount, productos, setProductos, loading, setLoading}}>
+        <CartContext.Provider value = {{cart, setCart, addItem, removeItem, clearCart, isInCart, count, setCount, productos, setProductos, loading, setLoading, updateProduct}}>
             {children}
         </CartContext.Provider>
     )
