@@ -9,7 +9,7 @@ const Cart = ({productoCarrito}) => {
     return (
         <>
             <div className='py-2'>
-                <Card border="light" className='shadow '>
+                <Card border="light" className='shadow fade-in'>
                     <Card.Header className='text-center'>
                         <div className='container'>
                             <div className='row'>

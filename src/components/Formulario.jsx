@@ -1,17 +1,22 @@
 import React, { useContext, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
 import '../index.css';
 import { collection, getFirestore, addDoc} from 'firebase/firestore';
 import { CartContext } from '../context/ShoppingCartContext';
 
+
 const Formulario = () => {
-    const {cart} = useContext (CartContext)
+    const {cart, clearCart} = useContext (CartContext)
+
     const [orderId, setOrderId] = useState (null)
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email,setEmail] = useState("")
     const [adress, setAdress] = useState("")
+    const [show, setShow] = useState(false);
 
     const order = {
         name,
@@ -20,12 +25,18 @@ const Formulario = () => {
         adress,
         cart
     }
-    console.log(name)
+
     const db = getFirestore()
     const ordersCollection = collection(db,"orden")
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        handleShow()
+
         addDoc(ordersCollection, order).then(({id})=> setOrderId(id))
     }
 
@@ -48,7 +59,25 @@ const Formulario = () => {
                         Finalizar compra
                     </Button>
                 </Form>
-                <h2>Nro de orden: {orderId}</h2>
+                <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+                centered
+                >
+                    <Modal.Header>
+                        <Modal.Title>¡GRACIAS POR SU COMPRA!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className=''>
+                        ID de seguimiento: <b>{orderId}</b>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Link to="/">
+                            <Button variant="dark" onClick={()=>clearCart()}>Finalizar</Button>
+                        </Link>
+                    </Modal.Footer>
+                </Modal>
             </div>
         </div>
     )

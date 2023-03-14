@@ -5,6 +5,7 @@ import Cart from './Cart';
 import CartEmpty from './CartEmpty';
 import CartTotal from './CartTotal';
 import Formulario from './Formulario';
+import Loader from './Loader';
 
 const CartContainer = () => {
     const {cart} = useContext(CartContext)

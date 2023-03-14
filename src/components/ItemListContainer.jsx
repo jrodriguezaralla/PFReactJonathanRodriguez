@@ -8,7 +8,7 @@ import Loader from "./Loader";
 
 const ItemListContainer = () => {
     const {category} = useParams()
-    const {productos, setProductos, setLoading, setCount, loading} = useContext(CartContext)
+    const {productos, setProductos, setCount, setLoading, loading} = useContext(CartContext)
     
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
         })
         setTimeout(()=>{
             setLoading(false)
-        },100)
+        },200)
         
     }, [])
     
