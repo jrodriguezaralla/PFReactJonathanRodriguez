@@ -37,6 +37,11 @@ Iniciar servidor
   npm run dev
 ```
 
+Clickear en link provisto del servidor local.
+
+![Link Screenshot](https://firebasestorage.googleapis.com/v0/b/react-proyectofinal-c3109.appspot.com/o/link_servidor.jpg?alt=media&token=1e3772f2-def5-410f-8f76-b0c79f65754e)
+
+
 
 ## Demo
 
