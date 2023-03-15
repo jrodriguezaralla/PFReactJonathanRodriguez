@@ -45,7 +45,7 @@ Clickear en link provisto del servidor local.
 
 ## Demo
 
-![GIF](https://firebasestorage.googleapis.com/v0/b/react-proyectofinal-c3109.appspot.com/o/Enersys-Commerce.gif?alt=media&token=07fbb10a-f3ce-4851-8c8f-0f07aadd0727)
+![GIF](https://firebasestorage.googleapis.com/v0/b/react-proyectofinal-c3109.appspot.com/o/Enersys-Commerce.gif?alt=media&token=07fbb10a-f3ce-4851-8c8f-0f07aadd0727.gif)
 
 
 
