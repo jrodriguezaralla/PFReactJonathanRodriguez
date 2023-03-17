@@ -5,11 +5,11 @@ import Cart from './Cart';
 import CartEmpty from './CartEmpty';
 import CartTotal from './CartTotal';
 import Formulario from './Formulario';
-import Loader from './Loader';
 
 const CartContainer = () => {
     const {cart} = useContext(CartContext)
     
+    //calculo el total del carrito
     let auxiliar = cart.map((el) => el.precio*el.quantity) 
     let total = auxiliar.reduce((acumulador, elemento) => acumulador + elemento,0)
 
@@ -17,9 +17,9 @@ const CartContainer = () => {
         <div className="d-flex justify-content-center">
             <div className="w-50">
                 <div className="mb-3">
-                    {cart.length === 0 
+                    {cart.length === 0 //Si el carrito esta vacio muestro alert avisando que se deben agregar productos
                         ? <CartEmpty/>
-                        : cart.map((prod)=> (
+                        : cart.map((prod)=> (// sino muestro los productos
                             <Cart
                                 key = {prod.id} 
                                 productoCarrito={prod}
@@ -27,9 +27,9 @@ const CartContainer = () => {
                             )) 
                     }
                 </div>
-
-                {cart.length != 0 && <CartTotal total={total}/>}
-                {cart.length != 0 && <Formulario/>}
+                    
+                {cart.length != 0 && <CartTotal total={total}/>/* Si hay prodcutos en el carrito muestro el total*/ }
+                {cart.length != 0 && <Formulario/>/* Si hay prodcutos en el carrito muestro el formulario*/}
             </div>
 
         </div>

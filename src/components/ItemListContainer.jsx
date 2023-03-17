@@ -15,6 +15,7 @@ const ItemListContainer = () => {
         setLoading(true)
         const db = getFirestore();
         const itemsCollection = collection(db, "baterias");
+        //traigo los productos desde Firebase
         getDocs(itemsCollection).then((snapshot) => {
             const productos = snapshot.docs.map((doc) => ({
                 id: doc.id,
@@ -30,7 +31,10 @@ const ItemListContainer = () => {
         
     }, [])
     
+    //filtro por categoria
     const prodFilter = productos.filter ((prod) => prod.category === category)
+
+    //Componente que se habilita cuando se esta cargando los datos
     if(loading)
     {
         return <Loader/>

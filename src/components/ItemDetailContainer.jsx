@@ -9,7 +9,7 @@ import Loader from './Loader';
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
-    const {setCount, count, setLoading, loading} = useContext (CartContext)
+    const {setCount, setLoading, loading} = useContext (CartContext)
 
     const [productDetail, setProductDetail] = useState([])
     
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
         const batRef= doc(db, "baterias", `${id}`)
 
         getDoc(batRef).then((snapshot) => {
-            if(snapshot.exists()){
+            if(snapshot.exists()){ //Si el producto existe lo traigo para mostrar
                 setProductDetail({...snapshot.data(), id: snapshot.id})
             }
             setCount(1)
@@ -27,10 +27,9 @@ const ItemDetailContainer = () => {
         setTimeout(()=>{
             setLoading(false)
         },200)
-
-
     }, []);
 
+    //Componente que se habilita cuando se esta cargando los datos
     if(loading)
     {
         return <Loader/>

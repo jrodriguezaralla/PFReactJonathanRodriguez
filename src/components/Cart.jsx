@@ -5,7 +5,7 @@ import { CartContext } from '../context/ShoppingCartContext';
 import '../index.css';
 
 const Cart = ({productoCarrito}) => {
-    const {removeItem, updateProduct, count} = useContext(CartContext)
+    const {removeItem, updateProduct} = useContext(CartContext)
     return (
         <>
             <div className='py-2'>

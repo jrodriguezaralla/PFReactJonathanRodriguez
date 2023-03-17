@@ -9,14 +9,15 @@ import { CartContext } from '../context/ShoppingCartContext';
 
 
 const Formulario = () => {
+    //importo el carrito y funcion para limpiar el carrito
     const {cart, clearCart} = useContext (CartContext)
 
-    const [orderId, setOrderId] = useState (null)
-    const [name, setName] = useState("")
-    const [lastName, setLastName] = useState("")
-    const [email,setEmail] = useState("")
-    const [adress, setAdress] = useState("")
-    const [show, setShow] = useState(false);
+    const [orderId, setOrderId] = useState (null) //State para guardar el order en firebase
+    const [name, setName] = useState("") //State para guardar el nombre en el order
+    const [lastName, setLastName] = useState("") //State para guardar el apellido en el order
+    const [email,setEmail] = useState("") //State para guardar el email en el order
+    const [adress, setAdress] = useState("") //State para guardar la direccion en el order
+    const [show, setShow] = useState(false); //State para mostrar modal con el ID de la compra
 
     const order = {
         name,
@@ -26,17 +27,18 @@ const Formulario = () => {
         cart
     }
 
+    //genero la collection order
     const db = getFirestore()
     const ordersCollection = collection(db,"orden")
 
+    //funciones para mostrar y ocultar modal
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    
     const handleSubmit = (e) => {
         e.preventDefault()
-
         handleShow()
-
         addDoc(ordersCollection, order).then(({id})=> setOrderId(id))
     }
 

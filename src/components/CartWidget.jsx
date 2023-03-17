@@ -13,7 +13,6 @@ const CartWidget = () => {
                 {`${cart.length}`}
             </Badge>
         </div>
-
     )
 }
 
