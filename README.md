@@ -45,7 +45,7 @@ Clickear en link provisto del servidor local.
 
 ## Demo
 
-![GIF](/src/assets/EnersysCommerce.gif)
+![GIF](/src/assets/Enersys-Commerce.gif)
 
 
 
