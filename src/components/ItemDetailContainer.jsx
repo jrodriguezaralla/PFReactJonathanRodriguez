@@ -25,8 +25,9 @@ const ItemDetailContainer = () => {
 			}
 			setCount(1);
 		});
-
-		setLoading(false);
+		setTimeout(() => {
+			setLoading(false);
+		}, 200);
 	}, []);
 
 	//Componente que se habilita cuando se esta cargando los datos
