@@ -21,8 +21,9 @@ const ItemListContainer = () => {
 			}));
 			setProductos(productos);
 			setCount(1);
-			setLoading(false);
 		});
+
+		setLoading(false);
 	}, []);
 
 	//filtro por categoria

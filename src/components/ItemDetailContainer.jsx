@@ -24,8 +24,9 @@ const ItemDetailContainer = () => {
 				setProductDetail({ ...snapshot.data(), id: snapshot.id });
 			}
 			setCount(1);
-			setLoading(false);
 		});
+
+		setLoading(false);
 	}, []);
 
 	//Componente que se habilita cuando se esta cargando los datos
