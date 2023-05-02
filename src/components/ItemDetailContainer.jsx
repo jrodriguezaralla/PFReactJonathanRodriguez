@@ -1,47 +1,44 @@
-import React, { useContext } from 'react'
-import { useState, useEffect } from "react"
-import ItemDetail from './ItemDetail'
-import { useParams } from 'react-router-dom'
-import { doc, getDoc, getFirestore, updateDoc} from "firebase/firestore";
-import '../index.css'
+import React, { useContext } from 'react';
+import { useState, useEffect } from 'react';
+import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
+import { doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore';
+import '../index.css';
 import { CartContext } from '../context/ShoppingCartContext';
 import Loader from './Loader';
 
 const ItemDetailContainer = () => {
-    const {id} = useParams()
-    const {setCount, setLoading, loading} = useContext (CartContext)
+	const { id } = useParams();
+	const { setCount, setLoading, loading } = useContext(CartContext);
 
-    const [productDetail, setProductDetail] = useState([])
-    
-    useEffect(() => {
-        setLoading(true)
-        const db = getFirestore()
-        const batRef= doc(db, "baterias", `${id}`)
+	const [productDetail, setProductDetail] = useState([]);
 
-        getDoc(batRef).then((snapshot) => {
-            if(snapshot.exists()){ //Si el producto existe lo traigo para mostrar
-                setProductDetail({...snapshot.data(), id: snapshot.id})
-            }
-            setCount(1)
-        })
-        setTimeout(()=>{
-            setLoading(false)
-        },200)
-    }, []);
+	useEffect(() => {
+		setLoading(true);
+		const db = getFirestore();
+		const batRef = doc(db, 'baterias', `${id}`);
 
-    //Componente que se habilita cuando se esta cargando los datos
-    if(loading)
-    {
-        return <Loader/>
-    }
+		getDoc(batRef).then((snapshot) => {
+			if (snapshot.exists()) {
+				//Si el producto existe lo traigo para mostrar
+				setProductDetail({ ...snapshot.data(), id: snapshot.id });
+			}
+			setCount(1);
+		});
+	}, []);
 
-    return (
-        <> 
-            <div className='d-flex justify-content-center p-5 import fade-in'>
-                    <ItemDetail producto={productDetail}/>
-            </div>
-        </>
-    )
-}
+	//Componente que se habilita cuando se esta cargando los datos
+	if (loading) {
+		return <Loader />;
+	}
 
-export default ItemDetailContainer
+	return (
+		<>
+			<div className="d-flex justify-content-center p-5 import fade-in">
+				<ItemDetail producto={productDetail} />
+			</div>
+		</>
+	);
+};
+
+export default ItemDetailContainer;
