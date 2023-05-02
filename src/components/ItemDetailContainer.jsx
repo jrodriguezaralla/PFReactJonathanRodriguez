@@ -24,6 +24,7 @@ const ItemDetailContainer = () => {
 				setProductDetail({ ...snapshot.data(), id: snapshot.id });
 			}
 			setCount(1);
+			setLoading(false);
 		});
 	}, []);
 
