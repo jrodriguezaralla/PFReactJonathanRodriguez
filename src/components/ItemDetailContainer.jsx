@@ -5,16 +5,14 @@ import { useParams } from 'react-router-dom';
 import { doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore';
 import '../index.css';
 import { CartContext } from '../context/ShoppingCartContext';
-import Loader from './Loader';
 
 const ItemDetailContainer = () => {
 	const { id } = useParams();
-	const { setCount, setLoading, loading } = useContext(CartContext);
+	const { setCount } = useContext(CartContext);
 
 	const [productDetail, setProductDetail] = useState([]);
 
 	useEffect(() => {
-		setLoading(true);
 		const db = getFirestore();
 		const batRef = doc(db, 'baterias', `${id}`);
 
@@ -25,15 +23,7 @@ const ItemDetailContainer = () => {
 			}
 			setCount(1);
 		});
-		setTimeout(() => {
-			setLoading(false);
-		}, 200);
 	}, []);
-
-	//Componente que se habilita cuando se esta cargando los datos
-	if (loading) {
-		return <Loader />;
-	}
 
 	return (
 		<>
